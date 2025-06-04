@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PayPal Style Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #f5f7fa;
+      color: #2c2e2f;
+    }
+    nav {
+      background-color: #003087;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .links a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+    nav .links a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 24px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .grid-two-cols {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+    .grid-two-rows {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #003087;
+    }
+    .balance-amount {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .balance-subtext {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .button {
+      background: #0070ba;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .quick-links .link {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #dcdfe3;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      transition: box-shadow 0.2s;
+    }
+    .quick-links .link:hover {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .quick-links i {
+      margin-right: 10px;
+      font-size: 16px;
+      color: #0070ba;
+      width: 20px;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .actions {
+      margin-top: 24px;
+    }
+    .second-action {
+      margin-top: 12px;
+      border-top: 1px dashed #ccc;
+      padding-top: 12px;
+    }
+    .second-action button {
+      display: block;
+      margin: 6px 0;
+      width: 100%;
+    }
+    .edit {
+      text-align: right;
+      font-size: 12px;
+      color: #0070ba;
+      cursor: pointer;
+    }
+    .logo img {
+      height: 32px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal Logo"> <strong>Jarvis Store</strong></div>
+    <div class="links">
+      <a href="#">Home</a>
+      <a href="#">Activity</a>
+      <a href="#">Sales</a>
+      <a href="#">Finance</a>
+      <a href="#">Operations</a>
+      <a href="#">Pay & Get Paid</a>
+      <a href="#">Marketing</a>
+      <a href="#">Business Tools</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="grid-two-cols">
+      <div>
+        <!-- PayPal Balance -->
+        <div class="card">
+          <h2>PayPal Balance</h2>
+          <div class="balance-amount">$27,283.68 USD</div>
+          <div class="balance-subtext">Available</div>
+          <button class="button">Transfer Money</button>
+        </div>
+
+        <!-- Insights -->
+        <div class="card" style="margin-top: 24px;">
+          <h2><i class="fas fa-chart-line" style="margin-right: 8px; color: #0070ba;"></i> Insights <span style="font-size: 14px; color: #888;">(Last 7 days)</span></h2>
+          <p><strong>Total Received:</strong> $578.75</p>
+          <p><strong>Money Out:</strong> $829.70</p>
+          <p><strong>Net Balance:</strong> -$250.95</p>
+          <button class="button" style="margin-top: 10px;">View Transactions</button>
+        </div>
+      </div>
+
+      <div>
+        <!-- Quick Links -->
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-blue-100 p-3 rounded-full">
+            <img src="business.png" alt="Business Tools" class="h-8 w-8" />
+          </div>
+          <span class="mt-2 font-medium">Business Tools</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-blue-100 p-3 rounded-full">
+            <img src="inv.png" alt="Invoicing" class="h-8 w-8" />
+          </div>
+          <span class="mt-2 font-medium">Invoicing</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-blue-100 p-3 rounded-full">
+            <img src="request.png" alt="Request Money" class="h-8 w-8" />
+          </div>
+          <span class="mt-2 font-medium">Request Money</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-blue-100 p-3 rounded-full">
+            <a href="3fh.html"><img src="send.png" alt="Send Money" class="h-8 w-8" /></a>
+          </div>
+          <span class="mt-2 font-medium">Send Money</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-blue-100 p-3 rounded-full">
+            <img src="payp.png" alt="PayPal.Me" class="h-8 w-8" />
+          </div>
+          <span class="mt-2 font-medium">PayPal.Me</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <div class="bg-blue-100 p-3 rounded-full">
+            <img src="oni.png" alt="Online Checkout" class="h-8 w-8" />
+          </div>
+          <span class="mt-2 font-medium">Online Checkout</span>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="grid-two-rows">
+      <!-- Create Invoice and Second Actions -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h2>Actions</h2>
+          <div class="edit"><i class="fas fa-pen"></i> Edit</div>
+        </div>
+        <div class="form-group">
+          <label>Customer Email</label>
+          <input class="input" type="email" placeholder="email@example.com" />
+        </div>
+        <div class="form-group">
+          <label>Item Name</label>
+          <input class="input" type="text" placeholder="Item name" />
+        </div>
+        <div class="form-group">
+          <label>Amount (USD)</label>
+          <input class="input" type="number" placeholder="Amount" />
+        </div>
+        <button class="button">Send</button>
+
+        <div class="second-action">
+          <button class="button">+ Create a quick donate link</button>
+          <button class="button">+ Sell on Social</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

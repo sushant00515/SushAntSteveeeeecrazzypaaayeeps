@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="uni.css">
+    <link rel="stylesheet" href="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/css/style.css">
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Header adjustments */
+        .header-div {
+            padding: 10px;
+        }
+
+        .menu-list {
+            display: flex;
+            gap: 10px;
+        }
+
+        .menu-list li {
+            list-style: none;
+        }
+
+        .menu-list a {
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .sm-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-list {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .gap-20 {
+                gap: 10px;
+            }
+
+            .footer-flexd-1 {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .send-section h2 {
+                font-size: 1.5em;
+                text-align: center;
+            }
+
+            .send-input-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .next-btn {
+                width: 100%;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+        }
+
+        .loading-circle {
+   border: 4px solid #0d00ff;
+    border-top: 4px solid #fff0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.confirmation-message {
+    margin-top: -50px;
+  }
+  #send-4 {
+    margin-top: -50px;
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .send-more-btn {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff; /* Small border */
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .send-more-btn:hover {
+            background-color: #0056b3;
+        }
+        .send-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+#send-2 .send-card {
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  background-color: #fff;
+  text-align: center;
+}
+
+#send-2 .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+#send-2 .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+#send-2 .amount-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 15px 0;
+  gap: 10px;
+}
+
+#send-2 .currency-symbol {
+  font-size: 32px;
+}
+
+#send-2 .amount-field {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #1d1d1d;
+  width: 200px;
+}
+
+
+
+#send-2 .currency-select {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+#send-2 .note-box {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  resize: none;
+  height: 70px;
+}
+
+#send-2 .agreement-text {
+  font-size: 14px;
+  color: #555;
+  margin: 20px 0 10px;
+}
+
+#send-2 .next-btn {
+  width: 100%;
+  background-color: #0056b3;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+}
+
+#send-2 .next-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#send-2 .cancel-link {
+  display: block;
+  margin-top: 15px;
+  color: #0070ba;
+  text-decoration: underline;
+  font-size: 14px;
+}
+.none {
+  display: none !important;
+}
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+}
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.search-icon.hidden {
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+}
+
+#userid {
+  flex: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.search-wrapper.icon-hidden #userid {
+  margin-left: -30px; /* shift input left when icon is hidden */
+}
+/* Animate the input shifting left when icon hides */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#userid {
+    flex: 1;
+    transition: all 0.3s ease;
+    padding-left: 45px; /* when icon is visible */
+}
+
+/* When icon is hidden */
+.search-wrapper.icon-hidden #userid {
+    padding-left: 10px; /* a small gap from left edge */
+}
+
+</style>
+</style>
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-div">
+            <div class="container">
+                <div class="flex header-flex space-between align-center">
+                    <div class="flex gap-20 align-center">
+                        <div class="logo-img"><a href="/">
+                            <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/pp-fv.svg" alt="Logo">
+                        </a></div>
+                        <ul class="menu-list">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#" class="active">Send</a></li>
+                            <li><a href="#">Wallet</a></li>
+                            <li><a href="#">Activity</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                    <div class="flex align-center gap-20">
+                        <div class="dp-icon">
+                            <a href="#">
+                                <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/bell.svg" alt="Notification" class="icon">
+                            </a>
+                        </div>
+                        <div class="dp-icon">
+                            <a href="#">
+                                <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/settings.svg" alt="Settings" class="icon">
+                            </a>
+                        </div>
+                        <div><a href="#" class="light-blue font-14">LOG OUT</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="box-section pt-25 pb-25">
+        <div class="sm-container">
+            <a href="#" title="Send" class="white-btn">Send</a>
+        </div>
+    </section>
+
+    <section class="send-section pt-50 pb-100">
+        <div class="sm-container">
+            <div id="send-1">
+                <h2>Send payment to</h2>
+                <div class="mt-30 send-input-wrapper flex search-wrapper">
+  <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/search.svg" class="search-icon" id="search-icon" alt="Search">
+  <input type="text" id="userid" placeholder="Enter name, email, or username" autocomplete="off">
+  <ul class="suggestion-box" id="suggestion-box"></ul>
+</div>
+
+                <div>
+                    <button class="mt-30 next-btn disabled" id="next-1">Next</button>
+                    
+                </div>
+                <br>
+                <img src="invoce.png" alt="More ways to send" width="440px">
+            </div>
+
+            <div id="send-2" class="none send-wrapper">
+  <div class="send-card">
+    <div class="user-info">
+      <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/user.svg" class="avatar">
+      <span class="email-text" id="send2-username">editora581@gmail.com</span>
+    </div>
+
+    <div class="amount-input">
+      <span class="currency-symbol">€</span>
+      <input type="text" id="fund-value" class="amount-field" value="0.00" maxlength="15" autocomplete="off" inputmode="decimal">
+      <select class="currency-select">
+        <option>USD</option>
+        <option>EUR</option>
+        <option>INR</option>
+      </select>
+    </div>
+
+    <textarea class="note-box" placeholder="What’s this for?"></textarea>
+
+    <p class="agreement-text">
+      For more information please read our <a href="#">user agreement</a>.
+    </p>
+
+    <button class="next-btn disabled" id="fund-btn">Next</button>
+    <a href="index.html" class="cancel-link">Cancel</a>
+  </div>
+</div>
+
+
+            <div id="processing" class="none txt-center">
+                <div class="loading-circle"></div>
+            </div>
+            
+
+            <div id="send-4" class="none">
+                <div class="pop-content">
+                    <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/tick.svg" alt="Success" class="icon">
+                    <h3>You've just sent € <span id="send-val"></span> to <span id="usename"></span></h3>
+                    <div><button class="mt-50 next-btn" id="back-btn">Send More</button></div>
+                    <br>
+                    <div><a href="3fh.html" button class="mt-20 cancel">Home</button></div></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="box-section">
+        <div class="pt-40 pb-40">
+            <div class="sm-container">
+                <div class="flex footer-flexd-1 gap-40">
+                    <div class="footer-logo">
+                        <a href="#">
+                            <img src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/images/PayPal.svg.png" alt="Logo">
+                        </a>
+                    </div>
+                    <ul class="footer-list flex gap-20 align-center">
+                        <li><a href="#" title="Help">Help</a></li>
+                        <li><a href="#" title="Contact Us">Contact Us</a></li>
+                        <li><a href="#" title="Security">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="pt-40 pb-40">
+            <div class="sm-container">
+                <div class="flex footer-flexd-1 gap-30">
+                    <p class="font-14">&copy;1999-2023 PayPal, Inc. All rights reserved.</p>
+                    <ul class="footer-list sm-fl flex gap-20 align-center">
+                        <li><a href="#" title="Privacy">Privacy</a></li>
+                        <li><a href="#" title="Cookies">Cookies</a></li>
+                        <li><a href="#" title="Legal">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="mt-30">
+                    <p class="font-14">PayPal Pte. Ltd. is licensed by the Monetary Authority of Singapore as a Major Payment Institution under the Payment Services Act 2019.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/js/jquery.magnific-popup.js"></script>
+    <script src="https://paypalweb-1yplbbn18-freeworldfghjhjkjkjghjgkdz.vercel.app/assets/js/script.js"></script>
+    <script>
+        // Redirect to index.html when the "Send More Money" button is clicked
+        document.getElementById('back-btn').addEventListener('click', function () {
+            window.location.href = 'index.html'; // Adjust the path if index.html is in another folder
+        });
+    </script>
+ <style>
+     .suggestion-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: none;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.suggestion-box li {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.suggestion-box li:last-child {
+    border-bottom: none;
+}
+
+.suggestion-box li:hover {
+    background: #f0f7ff;
+}
+
+.suggestion-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.suggestion-text {
+    font-size: 14px;
+    color: #333;
+}
+.letter-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #0070ba;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.suggestion-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d1d1d;
+}
+
+.suggestion-box li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+.circle-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #0070ba;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+</style>
+
+<script>
+    
+    // Show the loading animation for 4 seconds
+function showLoading() {
+    const processingDiv = document.getElementById('processing');
+    processingDiv.classList.remove('none'); // Show the loading animation
+
+}
+
+// Example usage: Call showLoading when the user clicks the "Continue" button
+document.getElementById('fund-btn').addEventListener('click', function () {
+    showLoading();
+});
+
+const recentInputs = ["rt", "d", "dtfg"];
+recentInputs.forEach(input => {
+    // Logic to display input in suggestions
+});
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let balance = localStorage.getItem("balance") || 405584912.86; // Default balance
+        balance = parseFloat(balance); 
+
+        document.getElementById('fund-btn').addEventListener('click', function () {
+            let amount = parseFloat(document.getElementById("fund-value").value);
+
+            if (isNaN(amount) || amount <= 0 || amount > balance) {
+                alert("Invalid amount. Please enter a valid amount within your balance.");
+                return;
+            }
+
+            setTimeout(() => {
+                // Deduct balance
+                balance -= amount;
+                localStorage.setItem("balance", balance.toFixed(2));
+
+                // Update success message
+                document.getElementById("send-val").innerText = amount.toFixed(2);
+            }, 2000); 
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("keydown", function (event) {
+        const key = event.key;
+
+        // Check if the pressed key is a letter (a-z) or a number (0-9)
+        if (/^[a-zA-Z0-9]$/.test(key)) {
+            // Find the corresponding button or perform an action
+            let button = document.querySelector(`[data-key="${key}"]`);
+            if (button) {
+                button.click(); // Simulate a button click
+            }
+        }
+    });
+
+    // Example: Assigning data-key attributes to buttons (add this manually in your HTML)
+    document.addEventListener("DOMContentLoaded", function () {
+        let buttons = document.querySelectorAll("button");
+        buttons.forEach(button => {
+            let key = button.innerText.trim();
+            if (key.length === 1) {
+                button.setAttribute("data-key", key.toLowerCase()); // Set lowercase letter or number
+            }
+        });
+    });
+    document.getElementById('fund-btn').addEventListener('click', function () {
+    showLoading();
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+});
+
+function showLoading() {
+    const processingDiv = document.getElementById('processing');
+    processingDiv.classList.remove('none'); // Show the loading animation
+}
+
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputField = document.getElementById('inputField');
+      const nextButton = document.getElementById('nextButton');
+      const continueButton = document.getElementById('continueButton');
+  
+      function toggleButtons() {
+        if (inputField.value.trim() !== '') {
+          nextButton.classList.remove('disabled');
+          continueButton.classList.remove('disabled');
+        } else {
+          nextButton.classList.add('disabled');
+          continueButton.classList.add('disabled');
+        }
+      }
+  
+      inputField.addEventListener('input', toggleButtons);
+    });
+  </script>
+<script>
+let typingTimer;
+const typingDelay = 500;
+const inputField = document.getElementById('userid');
+const suggestionBox = document.getElementById('suggestion-box');
+
+inputField.addEventListener('input', function () {
+    clearTimeout(typingTimer);
+    const input = this.value.trim();
+
+    if (input.length > 0) {
+        suggestionBox.innerHTML = `
+    <li style="justify-content: center; padding: 20px;">
+        <div class="circle-spinner"></div>
+    </li>`;
+
+        suggestionBox.style.display = 'block';
+
+      typingTimer = setTimeout(() => {
+    const firstLetter = input.charAt(0).toUpperCase();
+    const colors = ["#0070ba", "#ff6b6b", "#6c5ce7", "#00b894", "#e17055", "#f39c12"];
+    const getColor = () => colors[Math.floor(Math.random() * colors.length)];
+
+    suggestionBox.innerHTML = `
+        <li>
+            <div class="letter-avatar" style="background-color: ${getColor()}">${firstLetter}</div>
+            <span class="suggestion-text">@${input}</span>
+        </li>
+        <li>
+            <div class="letter-avatar" style="background-color: ${getColor()}">${firstLetter}</div>
+            <span class="LeoAndreas345">${input}@gmail.com</span>
+        </li>
+        <li>
+            <div class="letter-avatar" style="background-color: ${getColor()}">${firstLetter}</div>
+            <span class="suggestion-text">${input}@gmail.com</span>
+        </li>`;
+
+
+         document.querySelectorAll('.suggestion-box li').forEach(item => {
+    item.addEventListener('click', function () {
+        // Get only the suggestion text (not the avatar letter)
+        const selectedText = this.querySelector('.suggestion-text')?.innerText.trim() || this.innerText.trim();
+        const firstLetter = selectedText.charAt(0).toUpperCase();
+
+        // Set the value inside input field
+        document.getElementById('userid').value = selectedText;
+
+        // Replace image avatar with a colored letter circle
+        const avatar = document.querySelector('#send-2 .avatar');
+        avatar.outerHTML = `
+            <div class="avatar letter-avatar" style="background-color: #0070ba;">
+                ${firstLetter}
+            </div>
+        `;
+
+        // Update the displayed username
+        document.getElementById('send2-username').textContent = selectedText;
+
+        // Hide the suggestion box
+        suggestionBox.style.display = 'none';
+    });
+});
+
+        }, typingDelay);
+    } else {
+        suggestionBox.style.display = 'none';
+    }
+});
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('a[href="3fh.html"]').forEach(button => {
+        button.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            
+            const newWindow = window.open("3fh.html", "_self");
+
+            if (newWindow.document.documentElement.requestFullscreen) {
+                newWindow.document.documentElement.requestFullscreen();
+            } else if (newWindow.document.documentElement.webkitRequestFullscreen) {
+                newWindow.document.documentElement.webkitRequestFullscreen();
+            }
+        });
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fundInput = document.getElementById("fund-value");
+    let cleared = false;
+
+    fundInput.addEventListener("focus", function () {
+        if (!cleared && fundInput.value === "00.00") {
+            fundInput.value = "";
+            cleared = true;
+        }
+    });
+
+    // Optional: prevent invalid input
+    fundInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const nextBtn = document.getElementById("next-1");
+  const inputField = document.getElementById("userid");
+
+  // Enable button when input is typed
+  inputField.addEventListener("input", function () {
+    if (this.value.trim() !== "") {
+      nextBtn.classList.remove("disabled");
+    } else {
+      nextBtn.classList.add("disabled");
+    }
+  });
+
+// When next is clicked, show #send-2 and update user display
+nextBtn.addEventListener("click", function () {
+  if (!nextBtn.classList.contains("disabled")) {
+    const userInput = document.getElementById("userid").value.trim();
+    document.getElementById("send-1").classList.add("none");
+    document.getElementById("send-2").classList.remove("none");
+
+    // Update the user email/name on Send 2 screen
+    document.getElementById("send2-username").textContent = userInput;
+  }
+});
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("fund-value");
+
+  // Keep raw number (no dots)
+  let rawDigits = "";
+
+  input.addEventListener("input", function () {
+    // Remove non-digit characters
+    rawDigits = this.value.replace(/\D/g, "");
+
+    // Limit to 12 digits max
+    rawDigits = rawDigits.substring(0, 12);
+
+    // Convert to number and format
+    let number = parseFloat(rawDigits) / 100;
+    let formatted = number.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    this.value = formatted;
+  });
+
+  // Clear default on focus
+  input.addEventListener("focus", function () {
+    if (this.value === "0.00") {
+      rawDigits = "";
+      this.value = "";
+    }
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fundBtn = document.getElementById("fund-btn");
+    const fundValue = document.getElementById("fund-value");
+
+    function validateAmount() {
+        const val = parseFloat(fundValue.value.replace(/,/g, ''));
+        if (!isNaN(val) && val > 0) {
+            fundBtn.classList.remove("disabled");
+        } else {
+            fundBtn.classList.add("disabled");
+        }
+    }
+
+    fundValue.addEventListener("input", validateAmount);
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fundBtn = document.getElementById("fund-btn");
+    const fundValue = document.getElementById("fund-value");
+
+    // Enable fund button when value is valid
+    fundValue.addEventListener("input", function () {
+        const cleanValue = fundValue.value.replace(/,/g, '');
+        const num = parseFloat(cleanValue);
+        if (!isNaN(num) && num > 0) {
+            fundBtn.classList.remove("disabled");
+        } else {
+            fundBtn.classList.add("disabled");
+        }
+    });
+
+    fundBtn.addEventListener("click", function () {
+        // Prevent click if still disabled
+        if (fundBtn.classList.contains("disabled")) return;
+
+        const cleanValue = fundValue.value.replace(/,/g, '');
+        const amount = parseFloat(cleanValue);
+
+        if (isNaN(amount) || amount <= 0) {
+            alert("Please enter a valid amount.");
+            return;
+        }
+
+        // Proceed to loading
+        document.getElementById("send-2").classList.add("none");
+        document.getElementById("processing").classList.remove("none");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // After 3 seconds, show confirmation
+        setTimeout(() => {
+            document.getElementById("processing").classList.add("none");
+            document.getElementById("send-4").classList.remove("none");
+
+            // Set confirmation values
+            document.getElementById("send-val").innerText = amount.toFixed(2);
+            document.getElementById("usename").innerText =
+                document.getElementById("send2-username").textContent;
+        }, 3000);
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const backBtn = document.getElementById("back-btn");
+
+    backBtn.addEventListener("click", function () {
+        // Reset UI sections
+        document.getElementById("send-4").classList.add("none");
+        document.getElementById("send-2").classList.remove("none");
+
+        // Reset input and button
+        const fundInput = document.getElementById("fund-value");
+        fundInput.value = "0.00";
+        document.getElementById("fund-btn").classList.add("disabled");
+    });
+});
+fundValue.addEventListener("focus", function () {
+    if (this.value === "0.00") {
+        this.value = "";
+    }
+});
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("userid");
+  const icon = document.getElementById("search-icon");
+  const wrapper = document.querySelector(".search-wrapper");
+
+  input.addEventListener("focus", () => {
+    icon.classList.add("hidden");
+    wrapper.classList.add("icon-hidden");
+  });
+
+  input.addEventListener("blur", () => {
+    if (input.value.trim() === "") {
+      icon.classList.remove("hidden");
+      wrapper.classList.remove("icon-hidden");
+    }
+  });
+});
+</script>
+</body>
+</html>
